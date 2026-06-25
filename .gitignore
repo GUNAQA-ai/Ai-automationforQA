@@ -1,0 +1,12 @@
+
+
+
+
+
+node_modules/
+allure-results/
+playwright-report/
+reports/
+
+tsconfig.generated.json
+tsconfig.json

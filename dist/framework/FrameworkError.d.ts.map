@@ -1,0 +1,1 @@
+{"version":3,"file":"FrameworkError.d.ts","sourceRoot":"","sources":["../../src/framework/FrameworkError.ts"],"names":[],"mappings":"AAAA,qBAAa,cAAe,SAAQ,KAAK;IACvC,SAAgB,IAAI,EAAE,MAAM,CAAC;IAC7B,SAAgB,aAAa,CAAC,EAAE,KAAK,CAAC;gBAE1B,OAAO,EAAE,MAAM,EAAE,aAAa,CAAC,EAAE,KAAK,EAAE,IAAI,SAAoB;CAU7E"}

@@ -1,0 +1,50 @@
+{
+  "name": "ai-playwright-framework",
+  "version": "1.0.0",
+  "description": "AI-driven, self-healing Playwright automation framework",
+  "main": "src/cli.ts",
+  "scripts": {
+    "ai-test": "cross-env AI_STAGE=full ts-node src/cli.ts",
+    "ai-test:ui": "cross-env AI_STAGE=full PLAYWRIGHT_UI=true ts-node src/cli.ts",
+    "plan": "cross-env AI_STAGE=plan ts-node src/cli.ts",
+    "api": "cross-env AI_STAGE=api ts-node src/cli.ts",
+    "generate": "cross-env AI_STAGE=generate ts-node src/cli.ts",
+    "security": "cross-env AI_STAGE=security ts-node src/cli.ts",
+    "execute": "cross-env AI_STAGE=execute ts-node src/cli.ts",
+    "heal": "cross-env AI_STAGE=heal ts-node src/cli.ts",
+    "report": "cross-env AI_STAGE=report ts-node src/cli.ts",
+    "test": "npx playwright test",
+    "lint": "eslint src/ --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "esbuild src/cli.ts src/run-json.ts --bundle --platform=node --target=node18 --packages=external --outdir=dist"
+  },
+  "keywords": [
+    "playwright",
+    "ai",
+    "automation",
+    "self-healing",
+    "typescript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.45.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.0",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^3.3.2",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.14.0",
+    "@types/node-fetch": "^2.6.13",
+    "allure-commandline": "^2.42.1",
+    "allure-playwright": "^3.10.0",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.28.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  }
+}

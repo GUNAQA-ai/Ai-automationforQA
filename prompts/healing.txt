@@ -1,0 +1,46 @@
+LOCATOR HEALING RULES FOR AGENTS
+
+These rules define how the locator-healing agent should analyze failures and generate replacement locators.
+
+---
+
+1. Never Generate Hardcoded Business Values
+Do not create locators using fixed business-specific values (e.g., specific user names, company names). Discover locator attributes dynamically.
+
+2. Preserve the Original Element Type
+textbox → heal to textbox
+button → heal to button
+
+3. Discover Locator Candidates from the DOM
+Analyze the current DOM using role, label, placeholder, name, id, parent-child, visible text.
+
+4. Prefer Semantic Locators
+Prioritize accessible roles, labels, and stable attributes. Avoid nth-child, absolute XPath, or deeply nested CSS.
+
+5. Dynamic XPath Strategy
+Always prefer and return dynamic XPath expressions using relative paths (starts with //) and attribute selectors (using @). Use single quotes for attribute values.
+
+When healing selectors for form inputs, textareas, or select dropdowns, always prefer stable, text-matching label-relative XPath expressions: `//label[contains(text(),'Billing Email')]//following::input[1]`.
+
+=========================================
+DYNAMIC FRAMEWORK API (For Context)
+=========================================
+{{FRAMEWORK_API}}
+=========================================
+
+10. Self-Healing Objective
+The goal of the agent is to generate the most stable, unique, and maintainable locator possible using the current DOM structure.
+
+FAILED SELECTOR:
+{{FAILED_SELECTOR}}
+
+PAGE CONTEXT (HTML SNIPPET / ARIA):
+{{PAGE_HTML_SNIPPET}}
+
+TARGET ELEMENT/REQUIREMENT:
+{{TARGET_REQUIREMENT}}
+
+INSTRUCTIONS FOR THE RESPONSE:
+1. Identify the correct matching element from the page context.
+2. Generate the healed locator as a single relative XPath selector using single quotes for attribute values. Prefer text-matching label-relative XPath expressions for form inputs.
+3. Respond ONLY with the raw selector string. Do not include any explanations, markdown code block fences (```), or conversational text. E.g. return exactly: //label[contains(text(),'Email')]//following::input[1]
